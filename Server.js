@@ -7,6 +7,12 @@ connection()
 
 const app=express()
 app.use(cors())
+
+app.get("/",(req,res)=>{
+
+  res.setHeader("Access-Control-Allow-Credentials","true");
+  res.send("API is Running")
+});
 app.use(express.json())
 app.use("/",router)
 
